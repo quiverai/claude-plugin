@@ -1,0 +1,14 @@
+{
+  "name": "quiverai",
+  "description": "QuiverAI plugins for creating and refining vector assets.",
+  "owner": {
+    "name": "QuiverAI"
+  },
+  "plugins": [
+    {
+      "name": "quiverai",
+      "source": "./plugins/quiverai-claude",
+      "description": "Generate and refine SVG assets with QuiverAI in Claude Code."
+    }
+  ]
+}
