@@ -6,12 +6,11 @@ Generate, vectorize, animate, and edit SVG assets with Arrow 2 through the hoste
 
 ## What it does
 
-- Text-to-SVG generation with Arrow 2, QuiverAI's flagship vector model
+- SVG, vector, icon, logo, and illustration work with Arrow 2, QuiverAI's flagship vector model, from a text prompt or reference images
 - Raster-to-SVG vectorization into editable SVGs you can refine, scale, and reuse
 - Micro animations that bring motion to static SVG assets, for logo reveals, loading states, and animated icons
-- Instruction-based edits of existing SVG creations or SVG sources
-- Reference-image prompting and refinement
-- Creation and task lookup
+- Instruction-based edits of existing SVGs, in a Chat that continues in the QuiverAI app
+- Library search and Artifact lookup
 - A bundled agent skill that guides model selection, prompt structure, and result handling
 
 ## Install
@@ -34,18 +33,16 @@ If you do not already have a QuiverAI account, sign up at [quiver.ai](https://qu
 ## MCP tools exposed
 
 - `list_models` - list QuiverAI models available to the connected user
-- `list_creations` - list generated QuiverAI creations for the connected user
-- `get_creation` - read integration-safe metadata for one creation
-- `get_creation_content` - read SVG content for one creation
-- `get_task` - read the status of an existing generation, vectorization, animation, or edit task
-- `create_generation` - create a text-to-SVG generation task from text and optional image sources
-- `create_vectorization` - create a raster-to-SVG vectorization task from an image source
-- `create_animation` - create an animation task from an existing SVG creation or SVG source
-- `create_edit` - create an edit task from an existing SVG creation or SVG source and an edit instruction
+- `send_prompt` - send a prompt (with optional images) to a QuiverAI Chat to make, vectorize, edit, or animate SVG artwork, with an idempotency key per request
+- `get_chat` - read a Chat's latest turn status and the Artifacts it wrote, optionally waiting for a running turn
+- `cancel_turn` - stop a Chat's running turn
+- `search_library` - search the connected user's Library for Artifacts
+- `get_artifact` - read one Artifact's prompt, versions, and app links
+- `get_artifact_svg` - read the SVG of one Artifact version
 
 ## Bundled skill
 
-`skills/quiverai/SKILL.md` is a Claude agent skill. It tells the agent when to call which tool, how to write effective generation prompts, how to pass direct image sources, and how to read finished SVG from the creation IDs a completed create returns.
+`skills/quiverai/SKILL.md` is a Claude agent skill. It tells the agent when to call which tool, how to write effective generation prompts, how to pass direct image sources, and how to wait for a turn and read the finished SVG from the Artifacts it wrote.
 
 ## Example prompts
 
@@ -64,7 +61,7 @@ claude plugin details quiverai
 claude mcp list
 ```
 
-`claude plugin details quiverai` should list the `quiverai` skill and MCP server, and `claude mcp list` should show the server as `plugin:quiverai:quiverai`. If it still shows "Needs authentication", repeat the sign-in step above. From there, ask the agent to run the QuiverAI skill end-to-end (for example: "list models, then generate an SVG of a delivery drone, then read the SVG content").
+`claude plugin details quiverai` should list the `quiverai` skill and MCP server, and `claude mcp list` should show the server as `plugin:quiverai:quiverai`. If it still shows "Needs authentication", repeat the sign-in step above. From there, ask the agent to run the QuiverAI skill end-to-end (for example: "list models, then generate an SVG of a delivery drone, then read the SVG of the result").
 
 ## Configuration
 
