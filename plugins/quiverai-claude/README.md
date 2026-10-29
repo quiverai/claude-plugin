@@ -83,9 +83,3 @@ No further configuration is required.
 ## Source and license
 
 MIT-licensed; see [LICENSE](./LICENSE). Issues and feedback: [support@quiver.ai](mailto:support@quiver.ai), or https://quiver.ai/contact.
-
-## Directory submission
-
-Claude supports the manifest fields `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl`, and `termsOfServiceUrl` as [directory listing metadata](https://code.claude.com/docs/en/plugins-reference#directory-listing-fields); Claude Code ignores them at runtime. Schema warnings about these directory-only fields require no removal.
-
-The stable plugin name remains `quiverai`; the directory display name is **QuiverAI Vector Design**. A `NAME_CONFUSABLE` policy hold requires Anthropic revalidation or manual review. Updated listing metadata does not guarantee clearance; a hold is [not a rejection](https://claude.com/docs/plugins/pre-submission-checklist).
