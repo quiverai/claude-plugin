@@ -1,16 +1,18 @@
 {
   "name": "quiverai",
-  "displayName": "QuiverAI",
-  "version": "0.1.0",
+  "displayName": "QuiverAI Vector Design",
+  "version": "0.1.1",
   "description": "Generate, refine, vectorize, and animate SVG assets with Arrow 2 through the hosted QuiverAI MCP server.",
   "author": {
     "name": "QuiverAI",
-    "email": "support@quiver.ai"
+    "email": "support@quiver.ai",
+    "url": "https://quiver.ai"
   },
   "homepage": "https://quiver.ai",
   "repository": "https://github.com/quiverai/claude-plugin",
   "license": "MIT",
   "icon": "./assets/logo.svg",
+  "documentationUrl": "https://github.com/quiverai/claude-plugin/blob/main/plugins/quiverai-claude/README.md",
   "supportUrl": "https://quiver.ai/contact",
   "privacyPolicyUrl": "https://quiver.ai/legal/privacy",
   "termsOfServiceUrl": "https://quiver.ai/legal/terms",
